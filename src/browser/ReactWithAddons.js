@@ -25,11 +25,13 @@
 
 "use strict";
 
+var EventPluginHub = require('EventPluginHub');
 var LinkedStateMixin = require('LinkedStateMixin');
 var React = require('React');
 var ReactCSSTransitionGroup = require('ReactCSSTransitionGroup');
 var ReactTransitionGroup = require('ReactTransitionGroup');
-var ReactCSSTransitionGroup = require('ReactCSSTransitionGroup');
+var ResponderEventPlugin = require('ResponderEventPlugin');
+var TapEventPlugin = require('TapEventPlugin');
 
 var cx = require('cx');
 var cloneWithProps = require('cloneWithProps');
@@ -39,8 +41,11 @@ React.addons = {
   LinkedStateMixin: LinkedStateMixin,
   CSSTransitionGroup: ReactCSSTransitionGroup,
   TransitionGroup: ReactTransitionGroup,
+  ResponderEventPlugin: ResponderEventPlugin,
+  TapEventPlugin: TapEventPlugin,
 
   classSet: cx,
+  injectEventPluginsByName: EventPluginHub.injection.injectEventPluginsByName,
   cloneWithProps: cloneWithProps,
   update: update
 };
